@@ -1,7 +1,7 @@
 'use-strict';
 const express = require('express');
 const port = 3000;
-const host = '0.0.0.0';
+const host = '127.0.0.1';
 const path = require('path');
 const app = express();
 app.use("/public", express.static(path.resolve(__dirname, "public")));
