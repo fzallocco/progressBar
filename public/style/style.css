@@ -1,0 +1,19 @@
+#wrap {
+  width: 500px;
+  height: 300px;
+  background-color: yellow;
+  float: left;
+}
+#progress-container {
+    width: 300px;
+    background-color: #eee;
+    border-radius: 5px;
+    border: 3px solid black;
+  }
+  
+  #progress-bar {
+    width: 0%;
+    height: 20px;
+    background-color: #4CAF50;
+    border-radius: 5px;
+  }

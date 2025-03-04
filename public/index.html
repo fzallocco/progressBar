@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progress Bar</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Work+Sans:wght@100..900&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="/public/style/style.css"
+    type="text/css"
+    media="all"
+  />
+  <script>
+    document.addEventListener('DOMContentLoaded', () => console.log('DOM ready!'));
+  </script>
+  <script type="text/javascript" defer>
+    document.addEventListener('DOMContentLoaded', (event) => {
+    const progressContainer = document.getElementById('progress-container');
+    const progressBar = document.getElementById('progress-bar');
+
+    function updateProgress(progress) {
+        progressBar.style.width = `${progress}%`;
+    }
+
+    // Example usage: Update progress every 100ms
+    /*let currentProgress = 0;
+    const intervalId = setInterval(() => {
+        currentProgress += 1;
+        updateProgress(currentProgress);
+        console.log(currentProgress);
+        if (currentProgress >= 100) {
+        clearInterval(intervalId);
+        }
+    }, 100);*/
+    function startProgress() {
+        let currentProgress = 0;
+        const intervalId = setInterval(() => {
+          currentProgress += 1;
+          updateProgress(currentProgress);
+          console.log(currentProgress);
+          if (currentProgress >= 100) {
+            clearInterval(intervalId);
+            startProgress(); // Restart the progress
+          }
+        }, 100);
+    }
+    startProgress();
+    console.log("DOM fully loaded and parsed");
+    });
+  </script>
+</head>
+<body>
+  <div id="wrap">
+    <p>"this is a progress bar"</p>
+    <div id="progress-container">
+      <div id="progress-bar"></div>
+    </div>
+  </div>
+</body>
+</html>
