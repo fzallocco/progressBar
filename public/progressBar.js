@@ -31,11 +31,11 @@ async function calculateProgress(num)
         console.log(": " + rows*10 + "%\n");
         console.log("");
         
-        if(num == 10)
+        /*if(num == 10)
         {
             num = 0;
             await calculateProgress(num); //call back function through recursion
-        }       
+        }*/      
     }
 
     console.log("Progress Bar Array:", progressBar);
